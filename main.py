@@ -186,6 +186,7 @@ def get_laps(
                 "lapTimeStr": str(lap["LapTime"]) if lap["LapTime"] is not None else None,
                 "lapStartTime": str(lap["StartTime"]) if "StartTime" in lap else "",
                 "isValid": bool(lap["IsAccurate"]) if "IsAccurate" in lap else True,
+                "compound": lap["Compound"] if "Compound" in lap and lap["Compound"] is not None else None
             })
         print(f"RETURNING {len(lap_list)} LAPS")
         return {"laps": lap_list}
