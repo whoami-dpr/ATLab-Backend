@@ -190,7 +190,7 @@ def get_laps(
                 "lapStartTime": str(lap["StartTime"]) if "StartTime" in lap else "",
                 "isValid": bool(lap["IsAccurate"]) if "IsAccurate" in lap else True,
                 "compound": str(lap["Compound"]) if "Compound" in lap and lap["Compound"] is not None else None,
-                "isPit": ("PitInTime" in lap and pd.notna(lap["PitInTime"])) or ("PitOutTime" in lap and pd.notna(lap["PitOutTime"]))
+                "isPit": ("PitInTime" in lap and pd.notna(lap["PitInTime"]))
             })
         print(f"RETURNING {len(lap_list)} LAPS")
         return {"laps": lap_list}
